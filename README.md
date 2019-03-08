@@ -30,6 +30,9 @@ We provide demo scripts for running code and visualizing results on sequences fr
 To run a demo script that shows representative results on short snippets from the train and test splits run
 
 ```
+ln -s /DATASET/ICRA18/MOTBeyondPixels/Data Data
+```
+```
 matlab -nosplash -nodesktop -r "run('src/main_script_train.m');exit;"
 ```
 ```

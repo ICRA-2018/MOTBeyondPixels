@@ -47,14 +47,6 @@ RUN pip3 install matlab_kernel
 
 ENV PATH="/usr/local/MATLAB/R2017a/bin:${PATH}"
 
-##################################### APT ######################################
-
-RUN apt-get -o Acquire::ForceIPv4=true update \
- && apt-get -o Acquire::ForceIPv4=true install -yq --no-install-recommends \
-    wget \
- && apt-get clean \
- && rm -rf /var/lib/apt/lists/*
-
 ##################################### COPY #####################################
 
 RUN mkdir ${HOME}/motbeyondpixels
