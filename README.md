@@ -30,8 +30,10 @@ We provide demo scripts for running code and visualizing results on sequences fr
 To run a demo script that shows representative results on short snippets from the train and test splits run
 
 ```
-main_script_train.m
-main_script_test.m
+matlab -nosplash -nodesktop -r "run('src/main_script_train.m');exit;"
+```
+```
+matlab -nosplash -nodesktop -r "run('src/main_script_test.m');exit;"
 ```
 > IMPORTANT: You need to have the `Data` folder initialized, before you can run this demo.
 > See below for details.

@@ -1,0 +1,12 @@
+name: motbeyondpixels
+
+base: 
+  ubuntu: 16.04
+  opengl: runtime
+
+apt:
+  - wget
+
+matlab:
+  host_path: /usr/local/MATLAB/R2017a
+  mac_address: "2c:60:0c:d6:50:36"
