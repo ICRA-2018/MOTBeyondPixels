@@ -1,4 +1,6 @@
 # MOTBeyondPixels
+[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/icra2018/motbeyondpixels.svg)](https://hub.docker.com/r/icra2018/motbeyondpixels)
+<a href="#how-to-run-with-docker"><img src="https://img.shields.io/badge/Docker-instructions-brightgreen.svg"></a>
 
 ![Example image](example_image.png)
 
@@ -30,17 +32,11 @@ We provide demo scripts for running code and visualizing results on sequences fr
 To run a demo script that shows representative results on short snippets from the train and test splits run
 
 ```
-ln -s /DATASET/ICRA18/MOTBeyondPixels/Data Data
-```
-```
-matlab -nosplash -nodesktop -r "run('src/main_script_train.m');exit;"
-```
-```
-matlab -nosplash -nodesktop -r "run('src/main_script_test.m');exit;"
+main_script_train.m
+main_script_test.m
 ```
 > IMPORTANT: You need to have the `Data` folder initialized, before you can run this demo.
 > See below for details.
-
 
 Before you can run this, however, make sure you download the requisite CNN appearance features and rectified images by running the following script.
 ```
@@ -64,3 +60,24 @@ We also release odometry estimates obtained from ORB-SLAM. Note that, since we u
 ## Autonomous driving software stacks using our method
 
 [AutoWare's](https://autware.ai)(world's first "all-in-one" open-source software for self-driving vehicles) image based object tracker is based on our work. [Link](https://github.com/CPFL/Autoware/tree/master/ros/src/computing/perception/detection/vision_tracker/packages/vision_beyond_track)
+
+# How to Run with Docker
+## Linux
+#### Prerequisites
+* MATLAB
+
+Tested on Ubuntu 16.04.6 with Docker 18.06.1-ce, MATLAB R2017a.
+
+1. Download the file [Data.tar.gz](https://drive.google.com/open?id=0B-9NOTtQ3zTQUTJORXlyTEZzR0M4UG1jUmRvS2ZCcE5ZUFI0) 
+and uncompress it in <YOUR_PATH>.
+
+2. Open a terminal and run the command:
+
+```
+docker run --rm -p 8888:8888 -v /usr/local/MATLAB/R2017a:/usr/local/MATLAB/R2017a  \
+  -v /usr/local/lib/python3.5/dist-packages/matlab:/usr/local/lib/python3.5/dist-packages/matlab \
+  -v <YOUR_PATH>/Data:/home/jovyan/motbeyondpixels/Data \
+  --mac-address=2c:60:0c:d6:50:36 icra2018/motbeyondpixels:latest
+```
+
+3. Run a web browser and open the link: [http://localhost:8888/lab/tree/README.ipynb](http://localhost:8888/lab/tree/README.ipynb)
