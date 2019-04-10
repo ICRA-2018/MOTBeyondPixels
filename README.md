@@ -2,7 +2,7 @@
 [![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/icra2018/motbeyondpixels.svg)](https://hub.docker.com/r/icra2018/motbeyondpixels)
 <a href="#how-to-run-with-docker"><img src="https://img.shields.io/badge/Docker-instructions-brightgreen.svg"></a>
 
-![Example image](example_image.png)
+<img src="example_image.png" alt="Example image">
 
 This repository contains code and data required to reproduce the results in the ICRA 2018 paper
 
@@ -69,7 +69,7 @@ We also release odometry estimates obtained from ORB-SLAM. Note that, since we u
 Tested on Ubuntu 16.04.6 with Docker 18.06.1-ce, MATLAB R2017a.
 
 1. Download the file [Data.tar.gz](https://drive.google.com/open?id=0B-9NOTtQ3zTQUTJORXlyTEZzR0M4UG1jUmRvS2ZCcE5ZUFI0) 
-and uncompress it in <YOUR_PATH>.
+and uncompress it in &lt;YOUR_PATH&gt;.
 
 2. Open a terminal and run the command:
 
